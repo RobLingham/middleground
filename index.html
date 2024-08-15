@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiddleGround</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="screen active">
+        <h1>welcome to middleground</h1>
+        <p>you being here means you care, and that’s a beautiful thing. thank you for being willing to do the work.</p>
+        <button id="startButton" class="start-button">Start Your Conflict Resolution Session</button>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="screen">
+        <div class="loader"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Conflict Resolution Form Screen -->
+    <div id="conflictResolutionScreen" class="screen">
+        <div class="container">
+            <h1>during the conflict, i felt...</h1>
+            <form id="feelingsForm">
+                <textarea id="feelingsInput" placeholder="Type your feelings here..."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <button id="reviewButton" class="review-button">Review Feelings</button>
+    </div>
+
+    <!-- Modal that will display the feelings -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>"User 1" feelings during conflict</h2>
+            <ul id="feelingsList"></ul>
+            <button id="saveAndProgressFromModal" class="progress-button">Save and Progress</button>
+        </div>
+    </div>
+
+    <!-- Accept Responsibility Screen -->
+    <div id="acceptResponsibilityScreen" class="screen">
+        <div class="container">
+            <h1>Accept Responsibility</h1>
+            <label for="responsibilitySelect">I take responsibility for:</label>
+            <select id="responsibilitySelect">
+                <option value="blank"> </option>
+                <option value="aggression">I was too aggressive</option>
+                <option value="notListening">I didn’t listen carefully</option>
+                <option value="overreacting">I overreacted</option>
+                <!-- Add more options as needed -->
+            </select>
+            <button id="nextButton" class="progress-button">Save and Progress</button> <!-- Updated text -->
+        </div>
+    </div>
+
+    <!-- Identify Triggers Screen -->
+    <div id="identifyTriggersScreen" class="screen">
+        <div class="container">
+            <h1>Identify Triggers</h1>
+            <label for="triggerInput">Start typing to identify your triggers:</label>
+            <input type="text" id="triggerInput" placeholder="Type a trigger...">
+            <ul id="suggestionsList" class="suggestions-list"></ul>
+            <button id="saveTriggerButton" class="progress-button">Save Trigger</button>
+            <ul id="identifiedTriggersList" class="identified-triggers-list"></ul>
+        </div>
+    </div>
+    
+    <!-- Logout Button -->
+    <button id="logoutButton" class="logout-button">Log Out</button>
+
+    <script src="app.js"></script>
+</body>
+</html>

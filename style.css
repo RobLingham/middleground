@@ -1,0 +1,378 @@
+/* General Body Styling */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #e7ddff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrolling */
+    box-sizing: border-box; /* Ensures padding is included in width/height */
+}
+
+/* Container for Form Screens */
+.container, .login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Login Screen Specific Styles */
+.login-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.login-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.login-container button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #005bb5;
+}
+
+/* Checkbox and Label Styling */
+.login-container .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Screen Styles */
+.screen {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: opacity 1s, visibility 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Button Styles */
+button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Positioning for Buttons */
+.start-button, .review-button, .progress-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.review-button {
+    z-index: 5;
+}
+
+.progress-button {
+    bottom: 80px;
+    z-index: 10;
+}
+
+/* Loading Spinner */
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Heading and Paragraph Styling */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100; /* Ensure modal is above other elements */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f8f8f8;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+li button:hover {
+    background-color: #e60000;
+}
+
+/* Logout Button Styling */
+.logout-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #F5FFDD;
+    color: #333;
+    opacity: 0.75;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+.logout-button:hover {
+    opacity: 1;
+    background-color: #F5FFDD;
+}
+
+/* Back Button Styling */
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #005bb5;
+}
+
+/* Suggestions List Styling */
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Identified Triggers List Styling */
+.identified-triggers-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.identified-triggers-list li {
+    background-color: #f8f8f8;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+/* General Body Styling */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #e7ddff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Container for Form Screens */
+.container, .login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Button Styles */
+button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Identified Triggers List Styling */
+.identified-triggers-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.identified-triggers-list li {
+    background-color: #f8f8f8;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Delete Button Styling */
+.delete-button {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.delete-button:hover {
+    color: #888;
+}
