@@ -234,37 +234,60 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDashboard(); 
     });
 
-    // Add a function to update the dashboard with the collected data
-    function updateDashboard() {
-        const dashboardFeelingsList = document.getElementById('dashboardFeelingsList');
-        const dashboardResponsibility = document.getElementById('dashboardResponsibility');
-        const dashboardTriggersList = document.getElementById('dashboardTriggersList');
-
-        // Populate the dashboard with collected data
-        dashboardFeelingsList.innerHTML = ''; 
-        Array.from(feelingsList.children).forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item.textContent.replace('X', '').trim();
-            dashboardFeelingsList.appendChild(li);
+        // Add a function to update the dashboard with the collected data
+        function updateDashboard() {
+            const dashboardFeelingsList = document.getElementById('dashboardFeelingsList');
+            const dashboardResponsibility = document.getElementById('dashboardResponsibility');
+            const dashboardTriggersList = document.getElementById('dashboardTriggersList');
+    
+            // Populate the dashboard with collected data
+            dashboardFeelingsList.innerHTML = ''; 
+            Array.from(feelingsList.children).forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item.textContent.replace('X', '').trim();
+                dashboardFeelingsList.appendChild(li);
+            });
+    
+            // Get the selected option's text for responsibility
+            const selectedResponsibilityOption = responsibilitySelect.options[responsibilitySelect.selectedIndex].text;
+            dashboardResponsibility.textContent = selectedResponsibilityOption;
+    
+            dashboardTriggersList.innerHTML = ''; 
+            Array.from(identifiedTriggersList.children).forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item.textContent.replace('✖', '').trim();
+                dashboardTriggersList.appendChild(li);
+            });
+        }
+    
+        // Back button functionality for Dashboard Screen
+        const backToTriggersButton = document.getElementById('backToTriggersButton');
+        backToTriggersButton.addEventListener('click', function() {
+            dashboardScreen.classList.remove('active');
+            identifyTriggersScreen.classList.add('active');
         });
-
-        // Get the selected option's text for responsibility
-        const selectedResponsibilityOption = responsibilitySelect.options[responsibilitySelect.selectedIndex].text;
-        dashboardResponsibility.textContent = selectedResponsibilityOption;
-
-        dashboardTriggersList.innerHTML = ''; 
-        Array.from(identifiedTriggersList.children).forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item.textContent.replace('✖', '').trim();
-            dashboardTriggersList.appendChild(li);
+    
+        // Make sections on the dashboard clickable
+        const feelingsSection = document.getElementById('feelingsSection');
+        const responsibilitySection = document.getElementById('responsibilitySection');
+        const triggersSection = document.getElementById('triggersSection');
+    
+        // Clickable "Feelings During Conflict" to navigate to the feelings screen
+        feelingsSection.addEventListener('click', function() {
+            dashboardScreen.classList.remove('active');
+            conflictResolutionScreen.classList.add('active');
         });
-    }
-
-    // Back button functionality for Dashboard Screen
-    const backToTriggersButton = document.getElementById('backToTriggersButton');
-    backToTriggersButton.addEventListener('click', function() {
-        dashboardScreen.classList.remove('active');
-        identifyTriggersScreen.classList.add('active');
+    
+        // Clickable "Accepted Responsibility" to navigate to the responsibility screen
+        responsibilitySection.addEventListener('click', function() {
+            dashboardScreen.classList.remove('active');
+            acceptResponsibilityScreen.classList.add('active');
+        });
+    
+        // Clickable "Identified Triggers" to navigate to the triggers screen
+        triggersSection.addEventListener('click', function() {
+            dashboardScreen.classList.remove('active');
+            identifyTriggersScreen.classList.add('active');
+        });
     });
-});
-
+    

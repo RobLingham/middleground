@@ -95,21 +95,26 @@
     </div>
 
     <!-- Dashboard Screen -->
-    <div id="dashboardScreen" class="screen">
-        <div class="container">
-            <h1>Review Collected Data</h1>
-            <h2>Feelings During Conflict</h2>
-            <ul id="dashboardFeelingsList"></ul>
-            
-            <h2>Accepted Responsibility</h2>
-            <p id="dashboardResponsibility"></p>
+<div id="dashboardScreen" class="screen">
+    <div class="container">
+        <h1>Review Collected Data</h1>
+        
+        <!-- Make this heading clickable to navigate back to the Conflict Resolution screen -->
+        <h2 id="feelingsSection">Feelings During Conflict</h2>
+        <ul id="dashboardFeelingsList"></ul>
+        
+        <!-- Make this heading clickable to navigate back to the Accept Responsibility screen -->
+        <h2 id="responsibilitySection">Accepted Responsibility</h2>
+        <p id="dashboardResponsibility"></p>
 
-            <h2>Identified Triggers</h2>
-            <ul id="dashboardTriggersList"></ul>
-            
-            <button id="backToTriggersButton" class="back-button">Back to Triggers</button>
-        </div>
+        <!-- Make this heading clickable to navigate back to the Identify Triggers screen -->
+        <h2 id="triggersSection">Identified Triggers</h2>
+        <ul id="dashboardTriggersList"></ul>
+        
+        <button id="backToTriggersButton" class="back-button">Back to Triggers</button>
     </div>
+</div>
+
 
     <!-- JavaScript -->
     <script src="app.js"></script>
