@@ -54,7 +54,7 @@
                 <option value="overreacting">I overreacted</option>
                 <!-- Add more options as needed -->
             </select>
-            <button id="nextButton" class="progress-button">Save and Progress</button> <!-- Updated text -->
+            <button id="nextButton" class="progress-button">Save and Progress</button>
         </div>
     </div>
 
@@ -67,12 +67,51 @@
             <ul id="suggestionsList" class="suggestions-list"></ul>
             <button id="saveTriggerButton" class="progress-button">Save Trigger</button>
             <ul id="identifiedTriggersList" class="identified-triggers-list"></ul>
+            <button id="backButton" class="back-button">Back</button>
+            <button id="reviewEventButton" class="progress-button" style="display: none;">Review Event</button> <!-- New button -->
         </div>
     </div>
     
-    <!-- Logout Button -->
-    <button id="logoutButton" class="logout-button">Log Out</button>
+    <!-- Additional Context Screen -->
+    <div id="additionalContextScreen" class="screen">
+        <div class="container">
+            <h1>Provide Additional Context or Notes to Your Partner</h1>
+            <form id="contextForm">
+                <textarea id="contextInput" placeholder="Type your context or notes here..."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <button id="reviewContextButton" class="review-button">Review Context</button>
+        </div>
+    </div>
 
+    <!-- Modal for Reviewing Context -->
+    <div id="contextModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Review Additional Context</h2>
+            <ul id="contextList"></ul>
+            <button id="saveAndProgressFromContextModal" class="progress-button">Save and Progress</button>
+        </div>
+    </div>
+
+    <!-- Dashboard Screen -->
+    <div id="dashboardScreen" class="screen">
+        <div class="container">
+            <h1>Review Collected Data</h1>
+            <h2>Feelings During Conflict</h2>
+            <ul id="dashboardFeelingsList"></ul>
+            
+            <h2>Accepted Responsibility</h2>
+            <p id="dashboardResponsibility"></p>
+
+            <h2>Identified Triggers</h2>
+            <ul id="dashboardTriggersList"></ul>
+            
+            <button id="backToTriggersButton" class="back-button">Back to Triggers</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script src="app.js"></script>
 </body>
 </html>
